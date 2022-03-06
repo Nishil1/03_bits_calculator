@@ -23,6 +23,7 @@ def user_choice():
 				return "image"
 
 
+
 		else:
 			print("Please choose a valid file type!")
 			print()
