@@ -13,6 +13,19 @@ def statement_generator(text, decoration):
 
     return ""
 
+def instructions():
+
+    statement_generator("Instructions / Information", "=")
+    print()
+    print("Please choose a data type (image/text/integer)")
+    print()
+    print("This program assumes that images are being represents in 24 bit colour (ie: 24 bits per pixel). For text we assume that ascii encoding is being used(8 bits per character.)")
+    print()
+    print("Complete as many calculations as nessacary, press <enter> at the end of each calculation or any key to quit")
+    print()
+    return ""
+
+
 def user_choice():
 
 	valid = True 
@@ -35,12 +48,10 @@ def user_choice():
 				return "integer"
 			else:
 				return "image"
-
-
-
 		else:
 			print("Please choose a valid file type!")
 			print()
+
 
 
 
@@ -79,7 +90,7 @@ def text_bits():
     num_bits = 8 * var_lenght 
 
     print()
-    print("\'{}\' has {} chracters...".format(var_text, var_lenght))
+    print("\'{}\' has {} characters...".format(var_text, var_lenght))
     print("# of bits is {} * 8...".format(var_lenght))
     print("We need {} of bits to represent {}".format(num_bits, var_text))
     print()
@@ -98,8 +109,6 @@ def image_bits():
 	print()
 	print("# of pixels = {} * {} = {}". format(image_height, image_width, num_pixels))
 	print("# of bits = {} * 24 = {}".format (num_pixels, num_bits))
-
-	image_bits()
 
 
 
@@ -127,6 +136,11 @@ def int_bits():
 
 statement_generator("Bit calculator for integers, text & images", "-")
 
+first_time = input("Press <enter> to see the instructions or any key to continue")
+
+if first_time == "":
+	instructions()
+
 keep_going = ""
 while keep_going == "":
 	data_type = user_choice()
@@ -139,9 +153,9 @@ while keep_going == "":
 	else:
 		text_bits()
 
-		print()
-		keep_going = input("Press <enter> to continue or any key to quit")
-		print()
+	print()
+	keep_going = input("Press <enter> to continue or any key to quit")
+	print()
 
 
 
