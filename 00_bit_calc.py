@@ -156,6 +156,11 @@ while keep_going == "":
 	print()
 	keep_going = input("Press <enter> to continue or any key to quit")
 	print()
+	if keep_going == "":
+		keep_going 
+	else:
+			print("Thank you for using bit calculator")
+
 
 
 
